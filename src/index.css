@@ -22,12 +22,24 @@ a:hover {
   color: #535bf2;
 }
 
+/* --- (替换) 你的 body 规则 --- */
 body {
+  /* 这是你新添加的背景色 */
+  background-color: #f0f2f5; 
+  
+  /* 保留你的 margin: 0 */
   margin: 0;
-  display: flex;
-  place-items: center;
+  
+  /* 移除 display: flex 和 place-items: center */
+  
+  /* 我们可以保留这些，它们是好的实践 */
   min-width: 320px;
   min-height: 100vh;
+
+  /* 添加一个更美观的字体 (来自我之前的建议) */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 h1 {
@@ -68,10 +80,6 @@ button:focus-visible {
 }
 
 /* --- Navbar Styles --- */
-/* --- 
-  请从你的 CSS 文件中删除旧的 .navbar 和 .sudoku-cell 规则，
-  然后添加以下所有代码 
---- */
 
 
 /* --- 1. Navbar - 粘性 (Sticky) 和 Z-index --- */
@@ -566,8 +574,18 @@ button:focus-visible {
   background-color: #3498db;
   color: white;
 }
-.auth-form .button-primary:hover {
-  background-color: #2980b9;
+/* --- (修改) .auth-form 规则 --- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  /* 移除旧的背景、内边距和边框，
+    因为它现在位于白色的 <main> 卡片上
+  */
+  background-color: transparent;
+  padding: 0;
+  border: none;
 }
 
 
@@ -668,14 +686,17 @@ html, body, #root {
   以填充其父容器 (.app-container) 中的所有可用空间。
 */
 .app-container > main {
-  flex-grow: 1;
-  
-  /* 我们还将合并 .page-container 的样式到这里，
-    以确保所有页面内容都居中并有内边距。
-  */
+  flex-grow: 1; 
   width: 100%;
-  max-width: 900px; /* 限制内容的最大宽度 */
-  margin: 0 auto; /* 水平居中 */
+  max-width: 900px;
+  
+  /* 关键：顶部/底部 2rem 外边距, 左右自动 (居中) */
+  margin: 2rem auto; 
   padding: 2rem;
-  box-sizing: border-box; /* 确保 padding 不会撑开宽度 */
+  box-sizing: border-box; 
+  
+  /* *** 新增：卡片样式 *** */
+  background-color: #ffffff; /* 纯白色背景 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 柔和的阴影 */
 }
