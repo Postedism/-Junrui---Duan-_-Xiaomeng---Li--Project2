@@ -2,11 +2,9 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +22,7 @@ a:hover {
 
 /* --- (修正) 你的 body 规则 --- */
 body {
-  background-color: #f0f2f5; 
+  background-color: #f0f2f5;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -114,7 +112,9 @@ button:focus-visible {
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   border-bottom: 3px solid transparent;
 }
-.nav-link:hover { color: #ffffff; }
+.nav-link:hover {
+  color: #ffffff;
+}
 .nav-link.active-link {
   color: #ffffff;
   font-weight: 600;
@@ -148,8 +148,12 @@ button:focus-visible {
   left: 0;
   transition: all 0.2s ease-in-out;
 }
-.nav-toggle .hamburger-icon::before { top: -8px; }
-.nav-toggle .hamburger-icon::after { top: 8px; }
+.nav-toggle .hamburger-icon::before {
+  top: -8px;
+}
+.nav-toggle .hamburger-icon::after {
+  top: 8px;
+}
 
 /* --- Navbar - 移动端媒体查询 --- */
 @media (max-width: 768px) {
@@ -194,7 +198,6 @@ button:focus-visible {
   }
 }
 
-
 /* --- 
   单元格样式 (Cell Styles) 
   (这是清理过的、唯一的单元格样式块)
@@ -208,11 +211,9 @@ button:focus-visible {
   border: 1px solid #ccc;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
-  
   /* 这是 "用户输入" 的颜色 */
   color: #3498db; /* 蓝色 */
   font-weight: 500;
-  
   /* 响应式大小 */
   width: 10vw;
   height: 10vw;
@@ -268,7 +269,7 @@ button:focus-visible {
     max-height: none;
     font-size: 1.2rem;
   }
-  
+
   /* 缩小控制区, 使棋盘有更多空间 */
   .controls-area {
     padding: 0.5rem;
@@ -282,7 +283,6 @@ button:focus-visible {
     padding: 0.75rem 0;
   }
 }
-
 
 /* --- Global Page Styles --- */
 .page-container {
@@ -334,7 +334,8 @@ button:focus-visible {
 }
 
 /* --- Rules Page Styles --- */
-.rules-page h2, .scores-page h2 {
+.rules-page h2,
+.scores-page h2 {
   border-bottom: 2px solid #eee;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
@@ -411,7 +412,6 @@ button:focus-visible {
   }
 }
 
-
 /* --- Sudoku Board Flexbox Styles --- */
 .sudoku-board {
   display: flex;
@@ -431,7 +431,6 @@ button:focus-visible {
 .sudoku-cell.border-bottom-heavy {
   border-bottom: 3px solid #333;
 }
-
 
 /* --- Game Header & Timer Styles --- */
 .game-header {
@@ -533,7 +532,6 @@ button:focus-visible {
   border: none;
 }
 
-
 /* --- Scores Table Styles --- */
 .scores-table {
   width: 100%;
@@ -554,7 +552,6 @@ button:focus-visible {
 .scores-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
 
 /* --- Game Selection Page Styles --- */
 .game-list-item {
@@ -593,9 +590,10 @@ button:focus-visible {
   grid-column: 1 / -1;
 }
 
-
 /* --- 全局全高布局 (Full Height Layout) --- */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -606,13 +604,13 @@ html, body, #root {
 }
 
 .app-container > main {
-  flex-grow: 1; 
+  flex-grow: 1;
   width: 100%;
   max-width: 900px;
-  margin: 2rem auto; 
+  margin: 2rem auto;
   padding: 2rem;
-  box-sizing: border-box; 
-  
+  box-sizing: border-box;
+
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
