@@ -20,7 +20,7 @@ a:hover {
   color: #535bf2;
 }
 
-/* --- 你的 body 规则 --- */
+/* --- body rule --- */
 body {
   background-color: #f0f2f5;
   margin: 0;
@@ -121,7 +121,7 @@ button:focus-visible {
   border-bottom-color: #3498db;
 }
 
-/* --- Navbar - 移动端汉堡菜单 --- */
+/* --- Navbar Mobile --- */
 .nav-toggle {
   display: none;
   background: none;
@@ -155,7 +155,6 @@ button:focus-visible {
   top: 8px;
 }
 
-/* --- Navbar - 移动端媒体查询 --- */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -198,12 +197,9 @@ button:focus-visible {
   }
 }
 
-/* --- 
-  单元格样式 (Cell Styles) 
-  (这是清理过的、唯一的单元格样式块)
---- */
 
-/* 1. 基础单元格样式 */
+
+/* Basic Cell Style */
 .sudoku-cell {
   display: flex;
   justify-content: center;
@@ -211,10 +207,9 @@ button:focus-visible {
   border: 1px solid #ccc;
   cursor: pointer;
   transition: all 0.15s ease-in-out;
-  /* 这是 "用户输入" 的颜色 */
-  color: #3498db; /* 蓝色 */
+  /* User input color */
+  color: #3498db; 
   font-weight: 500;
-  /* 响应式大小 */
   width: 10vw;
   height: 10vw;
   max-width: 45px;
@@ -222,39 +217,38 @@ button:focus-visible {
   font-size: 1.5rem;
 }
 
-/* 2. 初始数字 (谜题) 的样式 */
+/* Puzzle Style */
 .sudoku-cell.cell-initial {
-  /* 这是 "谜题" 的颜色 */
-  color: #333; /* 深灰色 */
-  font-weight: 700; /* 加粗 */
-  background-color: #f0f0f0; /* 浅灰色背景 */
+  /* Puzzle color */
+  color: #333; 
+  font-weight: 700; 
+  background-color: #f0f0f0; 
   cursor: not-allowed;
 }
 
-/* 3. (修复) 标红 - 优先级 1 */
+/* Wrong number style */
 .sudoku-cell.cell-incorrect {
-  background-color: #ffebee; /* 浅红色 */
-  border: 2px solid #c62828; /* 深红色边框 */
-  color: #c62828; /* 深红色文字 */
+  background-color: #ffebee; 
+  border: 2px solid #c62828; 
+  color: #c62828; 
   margin: -1px;
 }
 
-/* 4. 提示 - 优先级 2 */
+/* Hint color */
 .sudoku-cell.cell-hinted {
-  background-color: #dff0d8; /* 浅绿色 */
-  border: 2px solid #3c763d; /* 深绿色 */
+  background-color: #dff0d8; 
+  border: 2px solid #3c763d; 
   color: #3c763d;
   margin: -1px;
 }
 
-/* 5. 选中 - 优先级 3 */
+/* choose color */
 .sudoku-cell.cell-selected {
-  background-color: #e7f3ff; /* 浅蓝色 */
-  border: 2px solid #3498db; /* 深蓝色 */
+  background-color: #e7f3ff; 
+  border: 2px solid #3498db; 
   margin: -1px;
 }
 
-/* 6. 响应式 - 6x6 模式 */
 .size-6 .sudoku-cell {
   width: 15vw;
   height: 15vw;
@@ -262,7 +256,6 @@ button:focus-visible {
   max-height: 50px;
 }
 
-/* 7. 响应式 - 移动端 */
 @media (max-width: 480px) {
   .sudoku-cell {
     max-width: none;
@@ -270,10 +263,9 @@ button:focus-visible {
     font-size: 1.2rem;
   }
 
-  /* 缩小控制区, 使棋盘有更多空间 */
   .controls-area {
     padding: 0.5rem;
-    flex-basis: auto; /* 允许它缩小 */
+    flex-basis: auto; 
   }
   .number-pad {
     gap: 5px;
@@ -284,7 +276,7 @@ button:focus-visible {
   }
 }
 
-/* --- Global Page Styles --- */
+/* Global Page Styles */
 .page-container {
   max-width: 900px;
   margin: 2rem auto;
@@ -292,7 +284,7 @@ button:focus-visible {
   line-height: 1.6;
 }
 
-/* --- Home Page Styles --- */
+/* Home Page Styles */
 .home-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -333,7 +325,7 @@ button:focus-visible {
   background-color: #bdc3c7;
 }
 
-/* --- Rules Page Styles --- */
+/* Rules Page Styles */
 .rules-page h2,
 .scores-page h2 {
   border-bottom: 2px solid #eee;
@@ -364,10 +356,9 @@ button:focus-visible {
   text-decoration: underline;
 }
 
-/* --- Game Page & Container Styles --- */
+/* Game Page & Container Styles */
 .game-page {
   max-width: 1000px;
-  /* (已从 .app-container > main 规则中移除了 margin 和 padding) */
 }
 
 .game-page h2 {
@@ -396,7 +387,6 @@ button:focus-visible {
   border-radius: 8px;
 }
 
-/* 移动端 (屏幕宽度小于 768px) */
 @media (max-width: 768px) {
   .game-container {
     flex-direction: column;
@@ -412,7 +402,7 @@ button:focus-visible {
   }
 }
 
-/* --- Sudoku Board Flexbox Styles --- */
+/* Sudoku Board Flexbox Styles */
 .sudoku-board {
   display: flex;
   flex-direction: column;
@@ -432,7 +422,7 @@ button:focus-visible {
   border-bottom: 3px solid #333;
 }
 
-/* --- Game Header & Timer Styles --- */
+/* Game Header & Timer Styles */
 .game-header {
   display: flex;
   justify-content: space-between;
@@ -475,7 +465,7 @@ button:focus-visible {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* --- Congratulations Message Style --- */
+/* Congratulations Message Style */
 .congratulations-message {
   text-align: center;
   font-size: 1.5rem;
@@ -488,7 +478,7 @@ button:focus-visible {
   border: 2px solid #a5d6a7;
 }
 
-/* --- Auth Form Styles (Login & Register) --- */
+/* Auth Form Styles (Login & Register) */
 .auth-page {
   max-width: 500px;
 }
@@ -522,7 +512,7 @@ button:focus-visible {
   color: white;
 }
 
-/* (唯一的 .auth-form 规则) */
+/* .auth-form rule */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -532,7 +522,7 @@ button:focus-visible {
   border: none;
 }
 
-/* --- Scores Table Styles --- */
+/* Scores Table Styles */
 .scores-table {
   width: 100%;
   border-collapse: collapse;
@@ -553,7 +543,7 @@ button:focus-visible {
   background-color: #f9f9f9;
 }
 
-/* --- Game Selection Page Styles --- */
+/* Game Selection Page Styles */
 .game-list-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -565,7 +555,7 @@ button:focus-visible {
   align-items: center;
 }
 
-/* --- Hint System Styles --- */
+/* Hint System Styles */
 .button-hint {
   background-color: #f0ad4e;
   color: white;
@@ -590,7 +580,6 @@ button:focus-visible {
   grid-column: 1 / -1;
 }
 
-/* --- 全局全高布局 (Full Height Layout) --- */
 html,
 body,
 #root {

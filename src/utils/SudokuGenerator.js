@@ -1,5 +1,3 @@
-// src/utils/SudokuGenerator.js
-
 /**
  * Fisher-Yates Algorithm
  * @param {Array} array - Original Array 
@@ -12,7 +10,7 @@ function shuffle(array) {
     }
     return array;
 }
-// *** 导出 shuffle 供 SudokuGenerator 使用 ***
+
 export { shuffle }; 
 
 
@@ -79,7 +77,6 @@ class SudokuGenerator {
         return true;
     }
 
-    // ... (fillBoard 保持不变) ...
     fillBoard() {
         const emptyCell = this.findEmptyCell();
         if (!emptyCell) {
@@ -100,7 +97,7 @@ class SudokuGenerator {
         return false;
     }
 
-    // ... (removeCells 保持不变) ...
+
     removeCells(cellsToKeep) {
         let cellsToRemove = (this.size * this.size) - cellsToKeep;
         while (cellsToRemove > 0) {
@@ -113,47 +110,39 @@ class SudokuGenerator {
         }
     }
 
-    // ... (printBoard 保持不变, 但我们将删除它，因为它只用于控制台) ...
-    // ... (我们不需要在应用中使用 printBoard) ...
-
-
     /**
      * generate function
      * @param {number} cellsToKeep
      * @returns {{puzzle: number[][], solution: number[][]}}
      */
     generate(cellsToKeep) {
-        // 重置棋盘
+        // reset chessboard
         this.board = Array(this.size).fill(0).map(() => Array(this.size).fill(null));
 
-        // 1. 填充完整棋盘 (Solution)
         if (!this.fillBoard()) {
-            // 如果第一次失败，尝试第二次 (虽然极少发生，但可以增加健壮性)
+            // for robust
             if (!this.fillBoard()) {
                 console.error("Sudoku Generation Failed!");
                 throw new Error("Failed to generate a complete board.");
             }
         }
         
-        // 复制完整的棋盘作为 Solution
+        // Copy the whole chessboard as Solution
         const solution = this.board.map(row => [...row]);
 
-        // 2. 挖空 (Puzzle)
         this.removeCells(cellsToKeep);
         
-        // 3. 复制挖空后的棋盘作为 Puzzle
-        // *** 关键：将 null 转换回 0，以匹配我们 Context 中使用的逻辑 ***
+        // Copy the digged out chessboard as puzzle
+        // transfer null to 0 for context ***
         const puzzle = this.board.map(row => 
             row.map(cell => (cell === null ? 0 : cell))
         );
         
-        // 返回结果
         return {
             puzzle: puzzle,
-            solution: solution, // solution 保持为 1-9
+            solution: solution, 
         };
     }
 }
 
-// *** 导出类 ***
 export default SudokuGenerator;

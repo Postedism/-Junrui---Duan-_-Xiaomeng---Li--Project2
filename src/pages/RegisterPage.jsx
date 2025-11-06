@@ -7,25 +7,24 @@ function RegisterPage() {
   const [password, setPassword] = useState('');
   const [verifyPassword, setVerifyPassword] = useState('');
 
-  // 模拟提交
   const handleSubmit = (event) => {
     event.preventDefault();
     if (password !== verifyPassword) {
-      alert('密码和验证密码不匹配！');
+      alert('Wrong Password!');
       return;
     }
     console.log('Mock Register Attempt:', { username, password });
-    alert('注册功能正在开发中。');
+    alert('Mock Register Page');
   };
 
   return (
     <div className="page-container auth-page">
-      <h2>注册</h2>
-      <p>这是一个模拟页面。注册功能尚未实现。</p>
+      <h2>Register</h2>
+      <p>This is a mock page</p>
       
       <form className="auth-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">用户名</label>
+          <label htmlFor="username">Username</label>
           <input 
             type="text" 
             id="username"
@@ -36,7 +35,7 @@ function RegisterPage() {
         </div>
         
         <div className="form-group">
-          <label htmlFor="password">密码</label>
+          <label htmlFor="password">Password</label>
           <input 
             type="password"
             id="password" 
@@ -47,7 +46,7 @@ function RegisterPage() {
         </div>
         
         <div className="form-group">
-          <label htmlFor="verifyPassword">验证密码</label>
+          <label htmlFor="verifyPassword">verifyPassword</label>
           <input 
             type="password"
             id="verifyPassword" 
@@ -58,7 +57,7 @@ function RegisterPage() {
         </div>
         
         <button type="submit" className="button-primary">
-          注册
+          SignUp
         </button>
       </form>
     </div>

@@ -1,32 +1,29 @@
-// src/components/Navbar.jsx
-
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// 辅助函数 (保持不变)
 const getNavLinkClass = ({ isActive }) => {
   return isActive ? 'nav-link active-link' : 'nav-link';
 };
 
 function Navbar() {
-  // *** 新增：State 来管理汉堡菜单的开关状态 ***
+  // A button for mobile
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    // *** 修改：根据 isNavOpen 动态添加 "nav-open" 类 ***
+    // base on isNavOpen use nav-open class
     <nav className={isNavOpen ? 'navbar nav-open' : 'navbar'}>
       <div className="navbar-brand">
         <NavLink 
           to="/" 
           className="navbar-logo" 
           end
-          onClick={() => setIsNavOpen(false)} // 点击 Logo 关闭菜单
+          onClick={() => setIsNavOpen(false)} 
         >
           Sudoku
         </NavLink>
       </div>
 
-      {/* *** 新增：汉堡菜单按钮 (只在移动端 CSS 中显示) *** */}
+      {/* only displays in mobile css */}
       <button 
         className="nav-toggle" 
         onClick={() => setIsNavOpen(!isNavOpen)}
@@ -35,43 +32,43 @@ function Navbar() {
         <span className="hamburger-icon"></span>
       </button>
 
-      {/* *** 新增：.nav-menu-wrapper 
-        *** 这个 div 帮助我们在移动端正确布局链接
+      {/* *** add .nav-menu-wrapper 
+        *** This div help in mobile
       */}
       <div className="nav-menu-wrapper">
         <ul className="navbar-links">
           <li>
             <NavLink to="/games/easy" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              简单 (6x6)
+              Easy (6x6)
             </NavLink>
           </li>
           <li>
             <NavLink to="/games/normal" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              普通 (9x9)
+              Normal (9x9)
             </NavLink>
           </li>
           <li>
             <NavLink to="/rules" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              游戏规则
+              Game Rules
             </NavLink>
           </li>
         </ul>
 
-        {/* 模拟的链接 */}
+        {/* Link */}
         <ul className="navbar-links-mocked">
           <li>
             <NavLink to="/scores" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              排行榜 (Mock)
+              HighScores
             </NavLink>
           </li>
           <li>
             <NavLink to="/login" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              登录 (Mock)
+              LogIn
             </NavLink>
           </li>
           <li>
             <NavLink to="/register" className={getNavLinkClass} onClick={() => setIsNavOpen(false)}>
-              注册 (Mock)
+              SignUp
             </NavLink>
           </li>
         </ul>

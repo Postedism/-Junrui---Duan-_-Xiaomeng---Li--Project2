@@ -1,8 +1,5 @@
-// src/pages/ScoresPage.jsx
-
 function ScoresPage() {
-  
-  // 模拟的、硬编码的数据
+  // mock data
   const mockScores = [
     { id: 1, username: 'SudokuMaster', completed: 42 },
     { id: 2, username: 'Player_123', completed: 35 },
@@ -12,15 +9,15 @@ function ScoresPage() {
 
   return (
     <div className="page-container scores-page">
-      <h2>排行榜</h2>
-      <p>此页面显示模拟数据，功能正在开发中。</p>
+      <h2>High-rank-scores</h2>
+      <p>Displays the player who solve most sudoku games</p>
       
       <table className="scores-table">
         <thead>
           <tr>
-            <th>排名</th>
-            <th>用户名</th>
-            <th>完成数量</th>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Solve number(Only count normal games)</th>
           </tr>
         </thead>
         <tbody>
